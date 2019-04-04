@@ -32,61 +32,57 @@
     <canvas id="renderCanvas" touch-action="none"></canvas> //touch-action="none" for best results from PEP
 
     <script>
-        function LoadChunk(assetsManager, dimension, chunkX, chunkZ, chunkY) {
+        const BlockScale = 0.1;
+        const AssetsRoot = "https://jakeshirley.github.io/babylon-viewer/";
+
+        function LoadChunk(scene, assetsManager, dimension, chunkX, chunkZ, chunkY) {
 			const chunkOffsetX = chunkX * 16 * BlockScale;
 			const chunkOffsetY = chunkY * 16 * BlockScale;
 			const chunkOffsetZ = chunkZ * 16 * BlockScale;
 
 			//load a text file and output the result to the console
-            let chunkRoot = `http://www.jakeshirley.com/mc/example_worlds/world1/dimensions/${dimension}/chunks/${chunkX}_${chunkZ}`;
+            let chunkRoot = `${AssetsRoot}example_worlds/world1/dimensions/${dimension}/chunks/${chunkX}_${chunkZ}`;
             
-            var textTask = assetsManager.addTextFileTask("Load Chunk Task", chunkRoot);
-            textTask.onSuccess = function(task) {
-                console.log(task.text);
+            var chunkMetaTask = assetsManager.addTextFileTask("LoadChunkMeta", `${chunkRoot}/terrain/${chunkY}/meta.json`);
+            chunkMetaTask.onSuccess = function(task) {
+                let metaData = JSON.parse(task.text);
 
-                /*
-                let metaData = JSON.parse(metaDataRaw);
+                console.log(`Chunk ${chunkX}, ${chunkZ} - ${chunkY}`);
+                console.log(metaData);
+                
+                let binaryLoader = new BABYLON.AssetsManager(scene);
 
-					console.log(`Chunk ${chunkX}, ${chunkZ} - ${chunkY}`);
-					console.log(metaData);
+                var chunkBinaryTask = binaryLoader.addBinaryFileTask("LoadChunkBinary", `${chunkRoot}/terrain/${chunkY}/blocks.bin`);
+                chunkBinaryTask.onSuccess = function(task) {
+                    // Chunks in MCIL are uint16 arrays
+                    let blockIdView = new Uint16Array(task.data);
 
-					// Load block data
-					binaryLoader.load(`${chunkRoot}/terrain/${chunkY}/blocks.bin`, 
-						function(blockData) {
-							// Chunks in MCIL are uint16 arrays
-							let blockIdView = new Uint16Array(blockData);
-							
-							var chunkGeometry = new THREE.Geometry();
+                    let blockIndex = 0;
+                    for(let x = 0; x < 16; ++x) {
+                        for(let z = 0; z < 16; ++z) {
+                            for(let y = 0; y < 16; ++y, blockIndex++) {
+                                let blockIdIndex = blockIdView[blockIndex];
+                                let blockId = metaData.terrain_palette[blockIdIndex];
+                                
+                                if(blockId != "minecraft:air") {
+                                    var box = BABYLON.MeshBuilder.CreateBox("box", {height: BlockScale, width: BlockScale, depth: BlockScale}, scene);
+                                    box.position.x = chunkOffsetX + x;
+                                    box.position.y = chunkOffsetX + y;
+                                    box.position.z = chunkOffsetX + z;
+                                }
+                            }
+                        }
+                    }
+                };
+                chunkBinaryTask.onError = function (task, message, exception) {
+                    console.log(`Chunk loading binary error: ${message}`);
+                };
 
-							let blockIndex = 0;
-							for(let x = 0; x < 16; ++x) {
-								for(let z = 0; z < 16; ++z) {
-									for(let y = 0; y < 16; ++y, blockIndex++) {
-										let blockIdIndex = blockIdView[blockIndex];
-										let blockId = metaData.terrain_palette[blockIdIndex];
-										
-										if(blockId != "minecraft:air") {
-											AddBlockGeoToChunk(chunkGeometry, blockId, x, y, z);
-										}
-									}
-								}
-							}
+                binaryLoader.load();
+            };
 
-							// TODO: Do render layers for different types of mesh materials
-							var chunkMesh = new THREE.Mesh(chunkGeometry, RenderMaterials["opaque"]);
-							chunkMesh.position.set(chunkOffsetX, chunkOffsetY, chunkOffsetZ);
-
-							let subChunkObj = {
-								mesh: chunkMesh
-							};
-
-							scene.add(chunkMesh);
-
-							// Cache Subchunk Data
-							SubChunks[`${chunkX}_${chunkZ}_${chunkY}`] = subChunkObj;
-						}
-					);*/
-
+            chunkMetaTask.onError = function (task, message, exception) {
+                console.log(`Chunk loading meta error: ${message}`);
             };
 		}
 
@@ -113,22 +109,25 @@
             // Add and manipulate meshes in the scene
             var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter:2}, scene);
 
-            Minecraft.LoadBlockSchema(assetsManager, "https://www.jakeshirley.com/mc/assets/bedrock_block_schema.json",
+            Minecraft.LoadBlockSchema(assetsManager, `${AssetsRoot}assets/bedrock_block_schema.json`,
 				function(blockSchema) {
+                    let metaJsonLoader = new BABYLON.AssetsManager(scene);
 
-					// Load chunks
-                    LoadChunk('overworld', 0, 0, 0);
-                    LoadChunk('overworld', 0, 0, 1);
-                    LoadChunk('overworld', 0, 0, 2);
-                    LoadChunk('overworld', -1, 0, 0);
-                    LoadChunk('overworld', -1, 0, 1);
-                    LoadChunk('overworld', -1, 0, 2);
-                    LoadChunk('overworld', 0, -1, 0);
-                    LoadChunk('overworld', 0, -1, 1);
-                    LoadChunk('overworld', 0, -1, 2);
-                    LoadChunk('overworld', -1, -1, 0);
-                    LoadChunk('overworld', -1, -1, 1);
-                    LoadChunk('overworld', -1, -1, 2);
+                    // Load chunks
+                    LoadChunk(scene, metaJsonLoader, 'overworld', 0, 0, 0);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', 0, 0, 1);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', 0, 0, 2);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', -1, 0, 0);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', -1, 0, 1);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', -1, 0, 2);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', 0, -1, 0);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', 0, -1, 1);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', 0, -1, 2);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', -1, -1, 0);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', -1, -1, 1);
+                    LoadChunk(scene, metaJsonLoader, 'overworld', -1, -1, 2);
+
+                    metaJsonLoader.load();
                 }
             );
 

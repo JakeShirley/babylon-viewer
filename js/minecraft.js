@@ -308,7 +308,6 @@
 
 		var textTask = assetsManager.addTextFileTask("LoadBlockSchema", pathToFile);
 		textTask.onSuccess = function(task) {
-			console.log(`Block Schema loading error: ${task.text}`);
 			let blockSchema = JSON.parse(StripJsonComments(task.text));
 				
 			let result = new BlockSchema();
