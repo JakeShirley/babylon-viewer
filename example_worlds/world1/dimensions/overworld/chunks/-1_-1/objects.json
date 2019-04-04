@@ -1,0 +1,128 @@
+[
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "65cefecd-b4ef-5f43-ccaa-2f36712cef70",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -13.2256450653076,
+        "y": 34.0,
+        "z": -15.5075206756592
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 88.4299011230469
+      }
+    }
+  },
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "742e1a0a-406a-a429-f568-2a0b5803b7e8",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -13.713098526001,
+        "y": 34.0,
+        "z": -10.7052011489868
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": -46.0815734863281
+      }
+    }
+  },
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "f7f7c8ef-ed98-61d4-f20b-7524c237a050",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -15.5073795318604,
+        "y": 34.0,
+        "z": -15.4997797012329
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 88.2942504882813
+      }
+    }
+  },
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "714f09bb-4b79-32fa-7da5-635a353758ab",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -10.9895219802856,
+        "y": 36.0,
+        "z": -13.498462677002
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": -90.1798858642578
+      }
+    }
+  },
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "16b46c2e-b09f-e4e1-102b-ae2c44f397e1",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -15.4818525314331,
+        "y": 34.0,
+        "z": -11.5095243453979
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 62.3071899414063
+      }
+    }
+  },
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "b7f01190-a2fd-92fb-9959-c0c3694c8563",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -12.7312393188477,
+        "y": 39.0,
+        "z": -0.597526550292969
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": -151.597229003906
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "terrain_palette": [
+    "minecraft:air",
+    "minecraft:dirt",
+    "minecraft:grass",
+    "minecraft:tall_grass",
+    "minecraft:still_water_source",
+    "minecraft:coal_ore",
+    "minecraft:granite",
+    "minecraft:white_tulip",
+    "minecraft:red_tulip",
+    "minecraft:poppy"
+  ]
+}

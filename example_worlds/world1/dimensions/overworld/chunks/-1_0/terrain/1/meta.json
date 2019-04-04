@@ -1,0 +1,12 @@
+{
+  "terrain_palette": [
+    "minecraft:air",
+    "minecraft:dirt",
+    "minecraft:granite",
+    "minecraft:grass",
+    "minecraft:coal_ore",
+    "minecraft:tall_grass",
+    "minecraft:allium",
+    "minecraft:red_tulip"
+  ]
+}

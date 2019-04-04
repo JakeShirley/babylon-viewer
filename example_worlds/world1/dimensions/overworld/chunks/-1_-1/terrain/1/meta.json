@@ -1,0 +1,11 @@
+{
+  "terrain_palette": [
+    "minecraft:air",
+    "minecraft:dirt",
+    "minecraft:coal_ore",
+    "minecraft:grass",
+    "minecraft:still_water_source",
+    "minecraft:light_blue_glazed_terracotta_north",
+    "minecraft:orange_tulip"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "terrain_palette": [
+    "minecraft:air",
+    "minecraft:red_nether_brick",
+    "minecraft:bedrock",
+    "minecraft:nether_wart_block",
+    "minecraft:stone_cutter"
+  ]
+}

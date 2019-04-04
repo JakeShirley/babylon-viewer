@@ -1,0 +1,23 @@
+[
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "a1dbbef2-15ff-70ba-7124-91736acb8a21",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": -12.2727241516113,
+        "y": 39.0999984741211,
+        "z": -0.0263439789414406
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 155.04736328125
+      }
+    }
+  }
+]

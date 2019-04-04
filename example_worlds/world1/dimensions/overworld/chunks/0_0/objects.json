@@ -1,0 +1,22 @@
+[
+  {
+    "minecraft:container_inventory": {
+      "items": null
+    },
+    "minecraft:identity": {
+      "id": "977479bc-eae6-8ea3-316c-fa4944028964",
+      "type": "minecraft:chest"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 5.0,
+        "y": 36.0,
+        "z": 2.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  }
+]

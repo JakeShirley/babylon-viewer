@@ -1,0 +1,125 @@
+[
+  {
+    "minecraft:container_inventory": {
+      "items": null
+    },
+    "minecraft:identity": {
+      "id": "63913535-c036-cede-d25f-bb8622e01bf8",
+      "type": "minecraft:chest"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 6.0,
+        "y": 34.0,
+        "z": -4.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  },
+  {
+    "minecraft:container_inventory": {
+      "items": null
+    },
+    "minecraft:identity": {
+      "id": "90311373-03a4-eab8-2009-6f1c0b4201c6",
+      "type": "minecraft:chest"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 5.0,
+        "y": 34.0,
+        "z": -3.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  },
+  {
+    "minecraft:container_inventory": {
+      "items": null
+    },
+    "minecraft:identity": {
+      "id": "e6b19b51-66f5-980c-3d47-270af177a1cb",
+      "type": "minecraft:chest"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 5.0,
+        "y": 34.0,
+        "z": -5.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  },
+  {
+    "minecraft:container_inventory": {
+      "items": null
+    },
+    "minecraft:identity": {
+      "id": "6c8dea2a-a1ee-754e-3842-cca3c24de5f9",
+      "type": "minecraft:chest"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 4.0,
+        "y": 34.0,
+        "z": -4.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  },
+  {
+    "minecraft:health": {
+      "current": 3.0,
+      "max": 3.0
+    },
+    "minecraft:identity": {
+      "id": "b4811234-4a29-e2e1-116a-148d1904de67",
+      "type": "minecraft:rabbit"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 0.539720416069031,
+        "y": 37.0,
+        "z": -7.5195255279541
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 63.8227844238281
+      }
+    }
+  },
+  {
+    "minecraft:container_inventory": null,
+    "minecraft:health": {
+      "current": 20.0,
+      "max": 20.0
+    },
+    "minecraft:identity": {
+      "id": "b3d1c6ec-ca16-d5a9-27d3-dbe692d5f163",
+      "type": "minecraft:player"
+    },
+    "minecraft:transform": {
+      "position": {
+        "x": 2.40881109237671,
+        "y": 38.6531867980957,
+        "z": -3.14851975440979
+      },
+      "rotation": {
+        "x": 77.6024780273438,
+        "y": -93.7246704101563
+      }
+    }
+  }
+]

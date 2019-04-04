@@ -1,0 +1,15 @@
+{
+  "terrain_palette": [
+    "minecraft:air",
+    "minecraft:dirt",
+    "minecraft:grass",
+    "minecraft:bedrock",
+    "minecraft:nether_wart_block",
+    "minecraft:stone_cutter",
+    "minecraft:red_nether_brick",
+    "minecraft:white_tulip",
+    "minecraft:tall_grass",
+    "minecraft:pink_tulip",
+    "minecraft:allium"
+  ]
+}

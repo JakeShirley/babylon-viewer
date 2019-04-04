@@ -1,0 +1,28 @@
+{
+  "game_rules": {
+    "block_drops_enabled": true,
+    "bonus_chest": false,
+    "daylight_cycle_enabled": false,
+    "fire_tick_enabled": true,
+    "keep_inventory": true,
+    "mob_griefing_enabled": false,
+    "mob_loot_enabled": false,
+    "mob_spawning_enabled": false,
+    "natural_regeneration": true,
+    "pvp": true,
+    "tntenabled": true,
+    "weather_cycle_enabled": false
+  },
+  "gamemode": "creative",
+  "has_been_loaded_in_creative": false,
+  "last_played": 1545252795000,
+  "name": "Basic Baseplate 32x32 Flat",
+  "nether_scale": 0,
+  "platform_data": null,
+  "seed": 4229846156,
+  "spawn": {
+    "x": 0,
+    "y": 250,
+    "z": 0
+  }
+}

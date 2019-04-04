@@ -1,0 +1,22 @@
+{
+  "terrain_palette": [
+    "minecraft:air",
+    "minecraft:dirt",
+    "minecraft:grass",
+    "minecraft:tall_grass",
+    "minecraft:still_water_source",
+    "minecraft:fern",
+    "minecraft:azure_bluet",
+    "minecraft:granite",
+    "minecraft:dandelion",
+    "minecraft:coal_ore",
+    "minecraft:allium",
+    "minecraft:white_tulip",
+    "minecraft:oxeye_daisy",
+    "minecraft:poppy",
+    "minecraft:pink_tulip",
+    "minecraft:blue_orchid",
+    "minecraft:red_tulip",
+    "minecraft:orange_tulip"
+  ]
+}
